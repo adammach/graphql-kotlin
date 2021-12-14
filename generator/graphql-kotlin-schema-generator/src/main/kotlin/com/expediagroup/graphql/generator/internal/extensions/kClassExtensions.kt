@@ -35,7 +35,7 @@ import kotlin.reflect.full.memberProperties
 import kotlin.reflect.full.primaryConstructor
 import kotlin.reflect.full.superclasses
 
-private const val INPUT_SUFFIX = "Input"
+private const val INPUT_SUFFIX = ""
 
 internal fun KClass<*>.getValidProperties(hooks: SchemaGeneratorHooks): List<KProperty<*>> =
     this.memberProperties
