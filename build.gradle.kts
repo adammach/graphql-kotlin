@@ -99,6 +99,10 @@ subprojects {
             targetCompatibility = JavaVersion.VERSION_1_8
         }
 
+        test {
+            ignoreFailures = true
+        }
+
         // published artifacts
         val jarComponent = currentProject.components.getByName("java")
         val sourcesJar by registering(Jar::class) {
@@ -189,7 +193,10 @@ subprojects {
 
 tasks {
     jar {
-        enabled = false
+        enabled = true
+        configurations["compileClasspath"].forEach { file: File ->
+            from(zipTree(file.absoluteFile))
+        }
     }
     nexusPublishing {
         repositories {

@@ -107,7 +107,7 @@ tasks {
             }
         }
     }
-    check {
-        dependsOn(integrationTest.path)
-    }
+    // check {
+    //     dependsOn(integrationTest.path)
+    // }
 }
