@@ -193,10 +193,7 @@ subprojects {
 
 tasks {
     jar {
-        enabled = true
-        configurations["compileClasspath"].forEach { file: File ->
-            from(zipTree(file.absoluteFile))
-        }
+        enabled = false
     }
     nexusPublishing {
         repositories {
